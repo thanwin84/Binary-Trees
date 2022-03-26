@@ -1,3 +1,5 @@
+// time: O(n)
+// in the worst case q size will be n/2. so space complexity is O(n)
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
