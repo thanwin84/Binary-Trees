@@ -22,3 +22,39 @@ public:
         return result;
     }
 };
+
+// using single stack
+// time: O(n) and space: O(H of the tree)
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> postorder;
+        if (!root){
+            return postorder;
+        }
+        TreeNode * current = root;
+        vector<TreeNode*> stack;
+        while (current || stack.size() > 0){
+            if (current){
+                stack.push_back(current);
+                current = current->left;
+            }
+            else {
+                TreeNode * temp = stack.back()->right;
+                if (!temp){
+                    temp = stack.back();
+                    stack.pop_back();
+                    postorder.push_back(temp->val);
+                    while (stack.size() > 0 && temp == stack.back()->right){
+                        temp = stack.back();
+                        stack.pop_back();
+                        postorder.push_back(temp->val);
+                    }
+                }
+                else {
+                    current = temp;
+                }
+            }
+        }
+        return postorder;
+    }
+};
