@@ -1,4 +1,5 @@
 # time: O(n) and space: O(H of the tree)
+# using one stack
 class Solution:
     def postorderTraversal(self, root):
         postorder = []
