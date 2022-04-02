@@ -35,10 +35,18 @@ public:
         vector<TreeNode*> stack;
         while (current || stack.size() > 0){
             if (current){
+                // if current is not null, push it to the stack and move left
+                // cause we have to go left first, then right and then root
                 stack.push_back(current);
                 current = current->left;
             }
             else {
+                // if current becomes null, that means we aleady treversed left subtree, now we have to check right subtree
+                // if stack top right is null, that means we have no right subtree to check
+                // we can process the root, STACK TOP IS THE ROOT NODE OF CURRENT SUBTREE
+                // after that, we will check again if popped item is the right subtree of stack top
+                // if popped item is right subtree stack top, cause we have go to root node after right subtree
+                // we print root
                 TreeNode * temp = stack.back()->right;
                 if (!temp){
                     temp = stack.back();
