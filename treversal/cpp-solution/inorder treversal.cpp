@@ -1,6 +1,8 @@
-// time: o(n) and O(height of the tree)
-// inspired from recursion
-class Solution {
+// time: O(n) and space O(height of the tree)
+// left -> root -> right
+// Alorithm: Go to left -> before going to left save the current node in stack cause we need to trace back to get the root node
+// stack top is the root of current subtree
+// after processing root node go to right subtree
 public:
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int> result;
