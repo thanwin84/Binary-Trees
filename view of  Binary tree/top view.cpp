@@ -1,5 +1,6 @@
 // using level order treversal with line tehnique
 // time complexity: O(nlongn). Cause insertion in map is logN
+// space: O(n)
 class Solution
 {
     public:
