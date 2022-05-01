@@ -1,4 +1,4 @@
-# there should be a class named adding. and you are just trying to print class properties
+// there should be a class named adding. and you are just trying to print class properties
 fprintf(newrecord,"%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n",
       adding.account_number,
       adding.client_name,
