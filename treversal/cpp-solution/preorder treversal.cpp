@@ -31,6 +31,7 @@ public:
             result.push_back(current->val);
             
             // pushing right first, coz we need the to print the left first
+            // by doing it, we are also keeping track of right subtree of proceesed node
             if (current->right){
                 stack.push_back(current->right);
             }
