@@ -4,21 +4,19 @@
 //optimized approach: We can calculate diametre in the same recursion rather than calculating Height each time seperately.
 // time: O(n) and space:) O(1)
 class Solution {
-  public:
-    // Function to return the diameter of a Binary Tree.
-    int result = 0;
-    int solve(Node *root){
-        if (!root){
+public:
+    int _max= 0;
+    int solve(TreeNode * root){
+        if (!root) {
             return 0;
         }
-        int left = solve(root->left);
-        int right = solve(root->right);
-        int temp = 1 + left + right;
-        result = max(result, temp);
-        return 1 + max(left, right);
+        int leftH = solve(root->left);
+        int rightH = solve(root->right);
+        _max = max(_max, leftH + rightH);
+        return 1 + max(leftH, rightH);
     }
-    int diameter(Node*root){
+    int diameterOfBinaryTree(TreeNode* root) {
         solve(root);
-        return result;
+        return _max;
     }
 };
