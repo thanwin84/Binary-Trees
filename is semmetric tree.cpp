@@ -13,5 +13,4 @@ public:
         return root == nullptr || isSemmetricHelp(root->left, root->right);
     }
 };
-
-// time: O(n) and stack space is O(H)
+// time: O(n) and stack space is O(N) assuming if the tree skewed tree
