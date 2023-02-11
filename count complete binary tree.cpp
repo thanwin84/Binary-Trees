@@ -1,3 +1,4 @@
+// In a complete binary tree, if the left and right subtree height is same, then the number of node is 2^h - 1
 class Solution {
 public:
     int rightHeight(TreeNode * root){
