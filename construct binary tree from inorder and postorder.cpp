@@ -1,3 +1,9 @@
+// in postorder the last element is the root node
+// suppose the current root node position is K
+// so we can search the root node position in inorder array, after that we can divide the inorder array into two part
+// in one part: start positon of inorder to k - 1 and in another part: k + 1 to end position of inorder
+// by doing it, we are deviding the problem into sub problems.
+
 class Solution {
 public:
     TreeNode * solve(vector<int> &postorder, vector<int> &inorder, int &postorderIndex, int inorderStart, int inorderEnd, unordered_map<int, int > &inorderMap){
